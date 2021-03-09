@@ -734,8 +734,8 @@ def pregroup_draw(words, layers, **params):
                 midpoint = (middle, - y - h)
                 backend.draw_wire((x1, -y), midpoint, bend_in=True)
                 backend.draw_wire((x2, -y), midpoint, bend_in=True)
-                backend.draw_wire((x1, - y - h - h), midpoint, bend_in=True)
-                backend.draw_wire((x2, - y - h - h), midpoint, bend_in=True)
+                backend.draw_wire(midpoint, (x1, - y - h - h), bend_out=True)
+                backend.draw_wire(midpoint, (x2, - y - h - h), bend_out=True)
                 scan_y[2 * off] = y + h + h
                 scan_y[2 * (off + 1)] = y + h + h
 
